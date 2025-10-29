@@ -1,22 +1,40 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+
+const Color kPrimaryColor = Color(0xFFE95422);
+const Color kBackgroundColor = Color(0xFFF5CB58);
+const Color kSocialButtonColor = Color(0xFFFFDECF);
+
 class Home extends StatelessWidget{
   const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5CB58),
-      appBar: PreferredSize(preferredSize: const Size.fromHeight(120), 
-      child:  AppBar(
-        automaticallyImplyLeading: false,
-        title: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 32),
-                      child: Text("hekko"),
-                    ),
+      backgroundColor: kBackgroundColor,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(10),
+        child: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: kBackgroundColor,
+          elevation: 0,
+        ),
       ),
-                  ),
-                  body: Text("body text"),);
-    // );
-    }
-    }
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Text("hekkl"),
+                Container()
+               
+                
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}

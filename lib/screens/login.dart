@@ -73,7 +73,7 @@ class _LoginState extends State<Login> {
             icon: SvgPicture.asset(
               "assets/svg/BackIcon.svg",
               height: 24,
-              colorFilter: const ColorFilter.mode(Colors.red, BlendMode.srcIn), // Ensure it is white
+              color: kPrimaryColor,
             ),
           ),
         ),

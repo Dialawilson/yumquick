@@ -44,7 +44,7 @@ class SignUp extends StatelessWidget{
             children: [
               const Text(
                 "Full Name",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
               ),
               const SizedBox(height: 10),
               TextField(
@@ -61,7 +61,7 @@ class SignUp extends StatelessWidget{
               const SizedBox(height: 10),
               const Text(
                 "Password",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
               ),
               const SizedBox(height: 10),
               TextField(
@@ -78,7 +78,7 @@ class SignUp extends StatelessWidget{
               const SizedBox(height: 10),
               const Text(
                 "Email Address",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
               ),
               const SizedBox(height: 10),
               TextField(
@@ -93,7 +93,7 @@ class SignUp extends StatelessWidget{
               ),
               const SizedBox(height: 10),
               Text("Mobile Number",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),),
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),),
               const SizedBox(height:10),
               TextField(
                 decoration: InputDecoration(
@@ -108,7 +108,7 @@ class SignUp extends StatelessWidget{
               const SizedBox(height: 10,),
               Text("Date of birth",
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 16,
                 fontWeight: FontWeight.w500,
               ),),
               const SizedBox(height: 10,),

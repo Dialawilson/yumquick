@@ -1,0 +1,90 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+
+const Color kPrimaryColor = Color(0xFFE95422);
+const Color kBackgroundColor = Color(0xFFF5CB58);
+const Color kSocialButtonColor = Color(0xFFFFDECF);
+
+class Home extends StatelessWidget {
+  const Home({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: kBackgroundColor, // Use constant color
+      
+      // PreferredSize is good for setting the overall height of the AppBar
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(200), // Adjusted height slightly
+        child: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: kBackgroundColor,
+          elevation: 0, // Removes the shadow
+          
+          // Set to false so the title starts near the left edge
+          centerTitle: false, 
+
+          // ⭐ FIX 1: Use Padding directly to align search bar with body content (30px)
+          title: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 40), // Use 0 here, as the padding will be applied inside
+            
+            // To ensure the search field is aligned with the body content's 
+            // 30px padding, we wrap the TextField itself in Padding.
+            child: Padding(
+              padding: const EdgeInsets.only(right: 30.0, top: 10.0), // Added top padding for better visual spacing
+              child: TextField(
+                
+                decoration: InputDecoration(
+                  hintText: "Search ",
+                  
+                  hintStyle: const TextStyle(color: Colors.grey),
+                  fillColor: Colors.white,
+                  filled: true,
+                  suffixIcon: const Icon(Icons.search, color: Colors.grey),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide.none,
+                  ),
+                  contentPadding: const EdgeInsets.symmetric(vertical: 19),
+                ),
+              ),
+            ),
+          ),
+          // ⭐ END OF FIX 1: AppBar is now correctly closed here
+        ),
+      ),
+      
+      body: Container(
+        width: double.infinity,
+        // Height is managed by the parent Scaffold/SingleChildScrollView
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+        ),
+        child: SingleChildScrollView(
+          // Body content padding of 30px horizontal
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                "Welcome to YumQuick!",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(height: 10),
+              const Text(
+                "Find your next delicious meal effortlessly.",
+                style: TextStyle(fontSize: 16, color: Colors.black54),
+              ),
+              // Add more content here...
+            ],
+          ),
+        ),
+      ),
+      // ⭐ FIX 2: Correctly closed the Scaffold and returned the widget.
+    );
+  }
+}
