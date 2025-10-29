@@ -1,0 +1,16 @@
+flutter_native_spash:
+  android:true;
+  ios:true;
+  web:false;
+  windows:false;
+  macos:false;
+  linux:true;
+
+  colors:
+    android: "#F5CB58"
+    ios: "#F5CB58"
+    web: "#ffffff" 
+
+  andriod_12:
+  color: "#F5CB58"
+  # image: assets/splash/splash.png
