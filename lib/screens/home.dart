@@ -23,67 +23,79 @@ class Home extends StatelessWidget{
       ),
       // ⭐ FIX 1: Removed the redundant Container with height: double.infinity
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+        // padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
         child: Column( // Column is now the direct child
           crossAxisAlignment: CrossAxisAlignment.start, // Align text to the left
           children: [
-            Row(
-              children: [
-                Expanded(
-                  flex: 3, // This is fine, but not necessary if it's the only Expanded
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: BorderSide.none,
-                      ),
-                      hintText: "Search...",
-                      filled: true,
-                      fillColor: Colors.white,
-
-                      // ⭐ FIX 2: Added a prefixIcon (makes more sense for search)
-                      // prefixIcon: const Icon(Icons.settings_rounded, color: Colors.grey),
-                      
-                      // ⭐ FIX 3: Corrected the asset path from 'asset/' to 'assets/'
-                      suffixIcon: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: SvgPicture.asset(
-                          // Using a 'filter' icon as it's more common for a suffix
-                          "assets/svg/filter.svg", 
-                          width: 20,
-                          height: 20,
-                          // colorFilter: const ColorFilter.mode(kPrimaryColor, BlendMode.srcIn),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+              child: Row(
+                
+                children: [
+                  Expanded(
+                    flex: 3, // This is fine, but not necessary if it's the only Expanded
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: BorderSide.none,
+                        ),
+                        hintText: "Search...",
+                        filled: true,
+                        fillColor: Colors.white,
+              
+                        // ⭐ FIX 2: Added a prefixIcon (makes more sense for search)
+                        // prefixIcon: const Icon(Icons.settings_rounded, color: Colors.grey),
+                        
+                        // ⭐ FIX 3: Corrected the asset path from 'asset/' to 'assets/'
+                        suffixIcon: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: SvgPicture.asset(
+                            // Using a 'filter' icon as it's more common for a suffix
+                            "assets/svg/filter.svg", 
+                            width: 20,
+                            height: 20,
+                            // colorFilter: const ColorFilter.mode(kPrimaryColor, BlendMode.srcIn),
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                
-                // Spacing between search and icons
-                const SizedBox(width: 15),
                   
-                // Re-usable helper widget for icons
-                _HomeIcon(svgPath: "assets/svg/cart.svg"),
-                const SizedBox(width: 10),
-                _HomeIcon(svgPath: "assets/svg/notify.svg"),
-                const SizedBox(width: 10),
-                _HomeIcon(svgPath: "assets/svg/profile.svg"),
-                  
-                // ⭐ FIX 4: Removed the misplaced SizedBox(height: 20) from the Row
-              ],
+                  // Spacing between search and icons
+                  const SizedBox(width: 15),
+                    
+                  // Re-usable helper widget for icons
+                  _HomeIcon(svgPath: "assets/svg/cart.svg"),
+                  const SizedBox(width: 10),
+                  _HomeIcon(svgPath: "assets/svg/notify.svg"),
+                  const SizedBox(width: 10),
+                  _HomeIcon(svgPath: "assets/svg/profile.svg"),
+                    
+                  // ⭐ FIX 4: Removed the misplaced SizedBox(height: 20) from the Row
+                ],
+              ),
             ),
             
             // This SizedBox is now correctly in the Column
-            const SizedBox(height: 25), 
+            const SizedBox(height: 3), 
             
-            const Text(
-              "Good Morning",
-              style: TextStyle(fontSize: 29, letterSpacing: 1, fontWeight: FontWeight.w900, color: Colors.white),
-            ),
-            Text("Rise And Shine! It's Breakfast Time",
-              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, 
-              color: kPrimaryColor
-            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                
+                children: [
+                  const Text(
+                    "Good Morning",
+                    style: TextStyle(fontSize: 29, letterSpacing: 1, fontWeight: FontWeight.w900, color: Colors.white),
+                  ),
+              Text("Rise And Shine! It's Breakfast Time",
+                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, 
+                color: kPrimaryColor
+              ),
+              ),
+                ],
+              ),
             ),
 
             const SizedBox(height: 30),
