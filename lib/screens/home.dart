@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 const Color kPrimaryColor = Color(0xFFE95422);
 const Color kBackgroundColor = Color(0xFFF5CB58);
 const Color kSocialButtonColor = Color(0xFFFFDECF);
+const Color CategoryIcon = Color(0xFFF3E9B5);
 
 class Home extends StatelessWidget{
   const Home({super.key});
@@ -107,7 +108,78 @@ class Home extends StatelessWidget{
               ),
               child: Column(
                 children: [
-                  Text("hekwk")
+                  SizedBox(
+                    height: 31,
+                  ),
+                  Row(
+                    
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    
+                    children: [
+                      _CategoryIcon(svgPath: "assets/svg/Snacks.svg"),
+                      SizedBox(width: 20,),
+                      _CategoryIcon(svgPath: "assets/svg/Meals.svg"),
+                      SizedBox(width: 20,),
+                      _CategoryIcon(svgPath: "assets/svg/Vegan.svg"),
+                      SizedBox(width: 20,),
+                      _CategoryIcon(svgPath: "assets/svg/Desserts.svg"),
+                      SizedBox(width: 20,),
+                      _CategoryIcon(svgPath: "assets/svg/Drinks.svg"),
+                    ],
+                  ),
+                  const Divider(
+                    height: 40,
+                    thickness: 1,
+                    indent: 20,
+                    endIndent: 20,
+                    color: Color(0xFFFFD8C7),
+                  ),
+
+                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20.0),
+                      child: const Text(
+                        "Best Sellers",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 20.0),
+                      child: Row(
+                        
+                        children:[ TextButton(
+                          onPressed: () {
+                            // Handle "See All" action
+                          },
+                          
+                          child: const Text(
+                            "View All ",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: kPrimaryColor,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          
+                        ),
+                        SvgPicture.asset(
+                          "assets/svg/NextIcon.svg",
+                          width: 15,
+                          
+                          height: 15,
+                          colorFilter: const ColorFilter.mode(kPrimaryColor, BlendMode.srcIn),
+                        )
+                        ],
+                      ),
+
+                    ),
+                  ],
+                 )
                 ],
               ),
             )
@@ -115,6 +187,29 @@ class Home extends StatelessWidget{
           ],
         ),
       ),
+    );
+  }
+}
+
+//foodicons
+class _CategoryIcon extends StatelessWidget{
+  final String svgPath;
+  
+  const _CategoryIcon({required this.svgPath});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        color: CategoryIcon,
+        borderRadius: BorderRadius.circular(30) 
+      ),
+      child: SvgPicture.asset(
+        svgPath,
+        height: 50,
+        width: 20,
+      )
     );
   }
 }
