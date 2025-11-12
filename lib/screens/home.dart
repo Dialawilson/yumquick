@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:yumquick/widget/footIcon.dart';
+import 'package:yumquick/widget/bestSeller.dart';
+import 'package:yumquick/widget/recommend.dart';
 
 
 const Color kPrimaryColor = Color(0xFFE95422);
@@ -46,10 +48,7 @@ class Home extends StatelessWidget{
                         filled: true,
                         fillColor: Colors.white,
               
-                        // ⭐ FIX 2: Added a prefixIcon (makes more sense for search)
-                        // prefixIcon: const Icon(Icons.settings_rounded, color: Colors.grey),
-                        
-                        // ⭐ FIX 3: Corrected the asset path from 'asset/' to 'assets/'
+                       
                         suffixIcon: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10),
                           child: SvgPicture.asset(
@@ -74,13 +73,13 @@ class Home extends StatelessWidget{
                   const SizedBox(width: 10),
                   _HomeIcon(svgPath: "assets/svg/profile.svg"),
                     
-                  // ⭐ FIX 4: Removed the misplaced SizedBox(height: 20) from the Row
+                  
                 ],
               ),
-            ),
             
             // This SizedBox is now correctly in the Column
-            const SizedBox(height: 3), 
+            ),
+            // const SizedBox(height: 3), 
             
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -89,10 +88,10 @@ class Home extends StatelessWidget{
                 children: [
                   const Text(
                     "Good Morning",
-                    style: TextStyle(fontSize: 29, letterSpacing: 1, fontWeight: FontWeight.w900, color: Colors.white),
+                    style: TextStyle(fontSize: 30, letterSpacing: 1, fontWeight: FontWeight.w900, color: Colors.white),
                   ),
               Text("Rise And Shine! It's Breakfast Time",
-                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, 
+                style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500, 
                 color: kPrimaryColor
               ),
               ),
@@ -108,6 +107,7 @@ class Home extends StatelessWidget{
                 borderRadius: BorderRadius.vertical(top: Radius.circular(30))
               ),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
                     height: 31,
@@ -177,14 +177,98 @@ class Home extends StatelessWidget{
                         )
                         ],
                       ),
-
                     ),
                   ],
-                 )
+                 ),
+                  SizedBox(height: 20,),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        BestSeller(Img_Url: 'assets/images/chops.png', price: '5.99',),
+                        BestSeller(Img_Url: 'assets/images/pot.png', price: '4.99',),
+                        BestSeller(Img_Url: 'assets/images/burger.png', price: '6.99',),
+                        BestSeller(Img_Url: 'assets/images/icecreem.png', price: "6.99",),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 30,),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Stack(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                            child: Image.asset(
+                              'assets/images/discount.png',
+                              height: 120,
+                              width: 390,
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                          Positioned(
+                            top: 30,
+                            left: 25,
+                            width: 120,
+                            
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text("Experience our",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white,
+                                  ),
+                                  
+                                ),
+                                Text("deicious new dish",
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
+                                ),),
+                                SizedBox(height: 3,),
+                                Text("30% OFF",
+                                  style: TextStyle(
+                                    fontSize: 31,
+                                    letterSpacing: 1.4,
+                                    fontWeight: FontWeight.w800,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  SizedBox(height: 30,),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Text("Recommened"
+                      ,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20,),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Recommend(rate: '3.99',Img_Url: 'assets/images/Burger.png' ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
-            )
-
+            ),
           ],
         ),
       ),
