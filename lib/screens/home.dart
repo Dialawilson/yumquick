@@ -262,7 +262,7 @@ class Home extends StatelessWidget{
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Recommend(rate: '3.99',Img_Url: 'assets/images/Burger.png' ),
+                        Recommend(rate: '3.9',Img_Url: 'assets/images/Burger.png' ),
                       ],
                     ),
                   ),
