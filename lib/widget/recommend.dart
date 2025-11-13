@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 const Color priceBg = Color(0xFFE95422);
 
 class Recommend extends StatelessWidget {
-  const Recommend({super.key, required this.Img_Url, this.rate});
+  const Recommend({super.key, required this.Img_Url, this.rate, this.price});
   final String Img_Url;
   final String? rate;
+  final String? price;
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +73,23 @@ class Recommend extends StatelessWidget {
                   ),
                 ),
               ),
-              
+              Positioned(
+                top: 95,
+                left: 78,
+                child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 4),
+                decoration: BoxDecoration( // Corrected BoxDecotration to BoxDecoration
+                  color: priceBg, // Corrected Color: to color:
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomLeft:Radius.circular(10)),
+                ),                child: Text(
+                  '\$${price ?? '?.??'}', // Display price, or a fallback if null
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                      fontSize: 12, // Added font size back
+                    ),
+                    ),
+              )),
 
             ],
           ),
