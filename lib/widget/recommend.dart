@@ -12,7 +12,7 @@ class Recommend extends StatelessWidget {
   Widget build(BuildContext context) {
     // The main container for the card, width/height can be defined here if needed
     return SizedBox(
-      width: 120, 
+      width: 175, 
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -25,7 +25,7 @@ class Recommend extends StatelessWidget {
                 child: Image.asset(
                   Img_Url,
                   height: 140, // Added a specific height for better structure
-                  width: 120, // Match the parent width
+                  width: 180, // Match the parent width
                   fit: BoxFit.cover,
                   errorBuilder: (context, error, stackTrace) => Container(
                     height: 140, // Match image height

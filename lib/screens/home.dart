@@ -263,6 +263,9 @@ class Home extends StatelessWidget{
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Recommend(rate: '3.9',Img_Url: 'assets/images/Burger.png', price: '5.99',),
+                        SizedBox(width: 15,),
+                        Recommend(rate: '4.2',Img_Url: 'assets/images/rows.png', price: '4.99',),
+                      
                       ],
                     ),
                   ),
