@@ -75,7 +75,7 @@ class Recommend extends StatelessWidget {
               ),
               Positioned(
                 top: 95,
-                left: 78,
+                left: 128,
                 child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 4),
                 decoration: BoxDecoration( // Corrected BoxDecotration to BoxDecoration
@@ -95,11 +95,7 @@ class Recommend extends StatelessWidget {
           ),
           // You would typically add Title/Subtitle/etc. here:
           const SizedBox(height: 8),
-          const Text(
-            "Item Title",
-            style: TextStyle(fontWeight: FontWeight.bold),
-            overflow: TextOverflow.ellipsis,
-          ),
+        
         ],
       ),
     );

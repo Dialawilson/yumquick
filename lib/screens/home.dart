@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:yumquick/screens/profile.dart';
+import 'package:yumquick/widget/bottomNav.dart';
 import 'package:yumquick/widget/footIcon.dart';
 import 'package:yumquick/widget/bestSeller.dart';
 import 'package:yumquick/widget/recommend.dart';
@@ -71,7 +73,29 @@ class Home extends StatelessWidget{
                   const SizedBox(width: 10),
                   _HomeIcon(svgPath: "assets/svg/notify.svg"),
                   const SizedBox(width: 10),
+                  GestureDetector(
+                    onTap: () {
+                      showGeneralDialog(
+                        context: context, 
+                        barrierDismissible: true,
+                        barrierLabel: "RightDrawer",
+                        transitionDuration: Duration(milliseconds: 300),
+                        pageBuilder: (_,__,___){
+                          return const Profile();
+                        },
+                        transitionBuilder: (_, anim, __, child){
+                          final offsetAnimation = Tween<Offset>(begin: const Offset(1,0),
+                          end: const Offset(0, 0),).animate(anim);
+
+                          return SlideTransition(position: offsetAnimation,
+                          child: child,);
+                        },
+
+                       );
+                    },
+                    child: 
                   _HomeIcon(svgPath: "assets/svg/profile.svg"),
+                  )
                     
                   
                 ],
@@ -268,7 +292,11 @@ class Home extends StatelessWidget{
                       
                       ],
                     ),
+                    
                   ),
+                  SizedBox(height: 30,),
+                  // Text("ekkle")
+                  BottomNav()
                 ],
               ),
             ),

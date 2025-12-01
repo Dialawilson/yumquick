@@ -135,7 +135,7 @@ class SignUp extends StatelessWidget{
                   // Handle terms and conditions tap
                 },
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                 mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("Terms of Use",
                     style: TextStyle(
