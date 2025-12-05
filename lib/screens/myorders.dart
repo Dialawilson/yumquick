@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:yumquick/widget/bottomNav.dart';
 import 'package:yumquick/widget/ordersbtns.dart';
 
 const Color kPrimaryColor = Color(0xFFE95422);
@@ -11,7 +12,8 @@ class MyOrders extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kBackgroundColor,
+      
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(120),
         child: AppBar(
@@ -39,6 +41,7 @@ class MyOrders extends StatelessWidget {
       ),
 
       body: Container(
+        padding: EdgeInsets.symmetric(vertical: 29),
         width: double.infinity,
         decoration: const BoxDecoration(
           color: Colors.white,
@@ -55,6 +58,7 @@ class MyOrders extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNav(),
     );
   }
 }
