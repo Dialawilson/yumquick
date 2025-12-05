@@ -10,7 +10,7 @@ class BestSeller extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       // The main container for the card, width/height can be defined here if needed
       width: 87, 
       child: Column(

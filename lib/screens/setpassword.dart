@@ -88,7 +88,7 @@ class SetPassword extends StatelessWidget{
                       // Handle button press
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFFE95422),
+                      backgroundColor: const Color(0xfffe95422),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       ),

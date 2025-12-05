@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:yumquick/screens/myOrders.dart';
+import 'package:yumquick/screens/myorders.dart';
 
 const Color kPrimaryColor = Color(0xFFE95422);
 class Profile extends StatelessWidget {
@@ -91,7 +90,7 @@ class Profile extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder:(context) =>Myorders())
+                          MaterialPageRoute(builder:(context) =>MyOrders())
                         ); // Close the drawer
                       },
                     ),
