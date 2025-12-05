@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 const Color kPrimaryColor = Color(0xFFE95422);
 class Alert extends StatelessWidget {
   const  Alert({super.key});
@@ -32,11 +33,11 @@ class Alert extends StatelessWidget {
             child: SafeArea(child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Padding(padding: EdgeInsetsGeometry.symmetric(vertical: 40, horizontal: 20),
+                Padding(padding: const EdgeInsetsGeometry.symmetric(vertical: 40, horizontal: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(Icons.notification_add_rounded, color: Colors.white,),
@@ -47,7 +48,7 @@ class Alert extends StatelessWidget {
                       ],
                     ),
                     // SizedBox(height: 20,),
-                    Padding(padding: 
+                    const Padding(padding: 
                   const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
                   child: const Divider(color: Colors.white54,),
                   ),
@@ -55,7 +56,16 @@ class Alert extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         radius: 20,
-                        child: Icon(Icons.soup_kitchen_outlined),
+                        child: Padding(
+                          padding:  const EdgeInsets.all(8.0),
+                          child: SvgPicture.asset("assets/svg/spoon.svg",),
+                        ),
+                      ),
+                      SizedBox(
+                        width: screenWidth*0.9,
+                        child: Text("we have added a product you may like",style: TextStyle(
+                          
+                        ),),
                       )
                     ],
                   )
