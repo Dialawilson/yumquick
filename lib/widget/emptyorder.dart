@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
+import 'package:yumquick/widget/activeorder.dart';
 
 const Color kPrimaryColor = Color(0xFFE95422);
 const Color kBackgroundColor = Color(0xFFF5CB58);
@@ -88,17 +89,20 @@ class _OrdersComponentState extends State<OrdersComponent> {
                 child: Wrap(
                   alignment: WrapAlignment.center,
                   // spacing: 10,
+                  
                   children: [
-              SvgPicture.asset("assets/svg/activeorders.svg", height: 150,),
-              SizedBox(height: 20),
-                   Text(
-                    "You don't have any active orders at this time",
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: kPrimaryColor,
-                    ),
-                  ),
+              // SvgPicture.asset("assets/svg/activeorders.svg", height: 150,),
+              // SizedBox(height: 20),
+              //      Text(
+              //       "You don't have any active orders at this time",
+              //       style: const TextStyle(
+              //         fontSize: 18,
+              //         fontWeight: FontWeight.w500,
+              //         color: kPrimaryColor,
+              //       ),
+              //     ),
+                  const Activeorder()
+
                   ],
                 ),
               ),

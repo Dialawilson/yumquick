@@ -43,6 +43,8 @@ class Alert extends StatelessWidget {
                         Icon(Icons.notification_add_rounded, color: Colors.white,),
                         SizedBox(width: 20,),
                         Text("Notifications", style: TextStyle(
+                          fontSize: 21,
+                          fontWeight: FontWeight.w700,
                           color: Colors.white
                         ),)
                       ],
@@ -61,14 +63,86 @@ class Alert extends StatelessWidget {
                           child: SvgPicture.asset("assets/svg/spoon.svg",),
                         ),
                       ),
+                      SizedBox(width: 20,),
                       SizedBox(
-                        width: screenWidth*0.9,
+                        width: 130,
                         child: Text("we have added a product you may like",style: TextStyle(
-                          
+                          color: Colors.white,
                         ),),
                       )
                     ],
-                  )
+                  ),
+                     const Padding(padding: 
+                   EdgeInsets.symmetric(horizontal: 10.0, vertical: 20),
+                  child:  Divider(color: Colors.white54,),
+                  ),
+                   Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 20,
+                        child: Padding(
+                          padding:  const EdgeInsets.all(8.0),
+                          child: SvgPicture.asset("assets/svg/favred.svg",),
+                        ),
+                      ),
+                      SizedBox(width: 20,),
+                      SizedBox(
+                        width: 130,
+                        child: Text("One of Your favorite is on promotion",style: TextStyle(
+                          color: Colors.white,
+                        ),),
+                      )
+                    ],
+                  ),
+                  const Padding(padding: 
+                   EdgeInsets.symmetric(horizontal: 10.0, vertical: 20),
+                  child:  Divider(color: Colors.white54,),
+                  ),
+                   Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 20,
+                        child: Padding(
+                          padding:  const EdgeInsets.all(8.0),
+                          child: SvgPicture.asset("assets/svg/bag.svg",),
+                        ),
+                      ),
+                      SizedBox(width: 20,),
+                      SizedBox(
+                        width: 130,
+                        child: Text("Your order has been delivered",style: TextStyle(
+                          color: Colors.white,
+                        ),),
+                      )
+                    ],
+                  ),
+                   const Padding(padding: 
+                   EdgeInsets.symmetric(horizontal: 10.0, vertical: 20),
+                  child:  Divider(color: Colors.white54,),
+                  ),
+                    Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 20,
+                        child: Padding(
+                          padding:  const EdgeInsets.all(8.0),
+                          child: SvgPicture.asset("assets/svg/bike.svg",),
+                        ),
+                      ),
+                      SizedBox(width: 20,),
+                      SizedBox(
+                        width: 130,
+                        child: Text("The delivery is on ita way",style: TextStyle(
+                          color: Colors.white,
+                        ),),
+                      )
+                    ],
+                  ),
+
+                   const Padding(padding: 
+                   EdgeInsets.symmetric(horizontal: 10.0, vertical: 20),
+                  child:  Divider(color: Colors.white54,),
+                  ),
 
                   ],
                 ),

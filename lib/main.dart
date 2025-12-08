@@ -36,6 +36,7 @@ class LaunchScreen extends StatelessWidget{
                          )),
                          SizedBox(
                           height: 43,
+                             // 192.168.0.96
                          ),
                         TextButton(
                           style: TextButton.styleFrom(
