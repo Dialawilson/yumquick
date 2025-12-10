@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+
+// ===== EMPTY STATE ======
 // import 'package:flutter_svg/flutter_svg.dart';
+// =======================
+
+
+// ===ACTIVE STATE ======
 import 'package:yumquick/widget/activeorder.dart';
+// =======================
 
 const Color kPrimaryColor = Color(0xFFE95422);
 const Color kBackgroundColor = Color(0xFFF5CB58);
@@ -85,26 +92,39 @@ class _OrdersComponentState extends State<OrdersComponent> {
             index: _selectedIndex,
             children: [
               // 🟢 Active Orders
-              Center(
-                child: Wrap(
-                  alignment: WrapAlignment.center,
-                  // spacing: 10,
-                  
-                  children: [
-              // SvgPicture.asset("assets/svg/activeorders.svg", height: 150,),
-              // SizedBox(height: 20),
-              //      Text(
-              //       "You don't have any active orders at this time",
-              //       style: const TextStyle(
-              //         fontSize: 18,
-              //         fontWeight: FontWeight.w500,
-              //         color: kPrimaryColor,
-              //       ),
-              //     ),
-                  const Activeorder()
+              Wrap(
+                alignment: WrapAlignment.center,
+                // spacing: 10,
+                
+                children: [
 
-                  ],
-                ),
+
+                  // ===== EMPTY STATE =====
+                  // Column(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                  //           SvgPicture.asset("assets/svg/activeorders.svg", height: 150,),
+                  //           SizedBox(height: 20),
+                  //                Center(
+                  //                  child: Text(
+                  //                   "You don't have any active orders at this time",
+                  //                   style: const TextStyle(
+                  //                     fontSize: 18,
+                  //                     fontWeight: FontWeight.w500,
+                  //                     color: kPrimaryColor,
+                  //                   ),
+                  //                                                  ),
+                  //                ),
+                      
+                  //   ],
+                  // ),
+                  // ==========================
+
+                // ====== Active Order Item(s) =====
+                const Activeorder()
+                // ==================================
+              
+                ],
               ),
 
               // ✅ Completed Orders
