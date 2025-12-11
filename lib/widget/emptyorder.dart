@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 // ===ACTIVE STATE ======
 import 'package:yumquick/widget/activeorder.dart';
+import 'package:yumquick/widget/completedorder.dart';
 // =======================
 
 const Color kPrimaryColor = Color(0xFFE95422);
@@ -97,8 +98,8 @@ class _OrdersComponentState extends State<OrdersComponent> {
                 // spacing: 10,
                 
                 children: [
-
-
+        
+        
                   // ===== EMPTY STATE =====
                   // Column(
                   //   mainAxisAlignment: MainAxisAlignment.center,
@@ -119,25 +120,37 @@ class _OrdersComponentState extends State<OrdersComponent> {
                   //   ],
                   // ),
                   // ==========================
-
+        
                 // ====== Active Order Item(s) =====
                 const Activeorder()
                 // ==================================
               
                 ],
               ),
-
+        
               // ✅ Completed Orders
-              Center(
-                child: Text(
-                  "Completed Orders will be displayed here",
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                  ),
+              // Center(
+              //   child: Text(
+              //     "Completed Orders will be displayed here",
+              //     style: const TextStyle(
+              //       fontSize: 18,
+              //       fontWeight: FontWeight.w500,
+              //     ),
+              //   ),
+              // ),
+              SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Wrap(
+                  children: [
+                const Completedorder(),
+                 const Completedorder(),
+                  const Completedorder(),
+                   const Completedorder(),
+                        
+                  ],
                 ),
               ),
-
+        
               // ❌ Cancel Orders
               Padding(
                 padding: const EdgeInsets.all(20),
