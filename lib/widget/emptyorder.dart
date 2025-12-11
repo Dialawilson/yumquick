@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 // ===ACTIVE STATE ======
 import 'package:yumquick/widget/activeorder.dart';
 import 'package:yumquick/widget/completedorder.dart';
+import 'package:yumquick/widget/ordercancelled.dart';
 // =======================
 
 const Color kPrimaryColor = Color(0xFFE95422);
@@ -74,7 +75,7 @@ class _OrdersComponentState extends State<OrdersComponent> {
                   ),
                   onPressed: () => setState(() => _selectedIndex = 2),
                   child: Text(
-                    "Cancel",
+                    "Cancelled",
                     style: TextStyle(
                       color: _selectedIndex == 2 ? Colors.white : kPrimaryColor,
                     ),
@@ -152,64 +153,72 @@ class _OrdersComponentState extends State<OrdersComponent> {
               ),
         
               // ❌ Cancel Orders
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+              SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Wrap(
                   children: [
-                    const Text(
-                      "Select a reason for cancellation:",
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-                    ),
-                    RadioListTile<String>(
-                      title: const Text("Delayed delivery"),
-                      value: "Delayed delivery",
-                      groupValue: _cancelReason,
-                      onChanged: (value) => setState(() => _cancelReason = value),
-                    ),
-                    RadioListTile<String>(
-                      title: const Text("Wrong item"),
-                      value: "Wrong item",
-                      groupValue: _cancelReason,
-                      onChanged: (value) => setState(() => _cancelReason = value),
-                    ),
-                    RadioListTile<String>(
-                      title: const Text("Changed my mind"),
-                      value: "Changed my mind",
-                      groupValue: _cancelReason,
-                      onChanged: (value) => setState(() => _cancelReason = value),
-                    ),
-                    const SizedBox(height: 20),
-                    TextField(
-                      controller: _reasonController,
-                      decoration: const InputDecoration(
-                        labelText: "Additional reason",
-                        border: OutlineInputBorder(),
-                      ),
-                    ),
-                    const SizedBox(height: 30),
-                    Center(
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: kPrimaryColor,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 40,
-                            vertical: 15,
-                          ),
-                        ),
-                        onPressed: () {
-                          final reason = _cancelReason ?? "No reason selected";
-                          final extra = _reasonController.text;
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text("Submitted: $reason | $extra")),
-                          );
-                        },
-                        child: const Text("Submit"),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+                    Ordercancelled()
+                  , Ordercancelled()
+                  , Ordercancelled()
+                  ]),),
+              // Padding(
+              //   padding: const EdgeInsets.all(20),
+              //   child: Column(
+              //     crossAxisAlignment: CrossAxisAlignment.start,
+              //     children: [
+              //       const Text(
+              //         "Select a reason for cancellation:",
+              //         style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+              //       ),
+              //       RadioListTile<String>(
+              //         title: const Text("Delayed delivery"),
+              //         value: "Delayed delivery",
+              //         groupValue: _cancelReason,
+              //         onChanged: (value) => setState(() => _cancelReason = value),
+              //       ),
+              //       RadioListTile<String>(
+              //         title: const Text("Wrong item"),
+              //         value: "Wrong item",
+              //         groupValue: _cancelReason,
+              //         onChanged: (value) => setState(() => _cancelReason = value),
+              //       ),
+              //       RadioListTile<String>(
+              //         title: const Text("Changed my mind"),
+              //         value: "Changed my mind",
+              //         groupValue: _cancelReason,
+              //         onChanged: (value) => setState(() => _cancelReason = value),
+              //       ),
+              //       const SizedBox(height: 20),
+              //       TextField(
+              //         controller: _reasonController,
+              //         decoration: const InputDecoration(
+              //           labelText: "Additional reason",
+              //           border: OutlineInputBorder(),
+              //         ),
+              //       ),
+              //       const SizedBox(height: 30),
+              //       Center(
+              //         child: ElevatedButton(
+              //           style: ElevatedButton.styleFrom(
+              //             backgroundColor: kPrimaryColor,
+              //             padding: const EdgeInsets.symmetric(
+              //               horizontal: 40,
+              //               vertical: 15,
+              //             ),
+              //           ),
+              //           onPressed: () {
+              //             final reason = _cancelReason ?? "No reason selected";
+              //             final extra = _reasonController.text;
+              //             ScaffoldMessenger.of(context).showSnackBar(
+              //               SnackBar(content: Text("Submitted: $reason | $extra")),
+              //             );
+              //           },
+              //           child: const Text("Submit"),
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
             ],
           ),
         ),

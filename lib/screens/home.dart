@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:yumquick/screens/alert.dart';
-import 'package:yumquick/screens/profile.dart';
+import 'package:yumquick/screens/sidenav.dart';
 import 'package:yumquick/widget/bottomNav.dart';
 import 'package:yumquick/widget/footIcon.dart';
 import 'package:yumquick/widget/bestSeller.dart';

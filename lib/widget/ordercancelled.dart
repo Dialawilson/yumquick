@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yumquick/widget/emptyorder.dart';
-import 'package:yumquick/widget/review.dart';
+
 
 // --- CONSTANTS ---
 // Using 0xFF for full opacity
@@ -9,8 +8,8 @@ const Color kBackgroundColor = Color(0xFFF5CB58);
 const Color kSecondaryColor = Color(0xFF333333); // Darker text/icon color
 const Color kLightAccent = Color.fromARGB(255, 255, 207, 207); // Light background for buttons/status
 
-class Completedorder extends StatelessWidget {
-  const Completedorder({super.key});
+class Ordercancelled extends StatelessWidget {
+  const Ordercancelled({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -103,78 +102,24 @@ class Completedorder extends StatelessWidget {
                       ),
                   
                       const SizedBox(height: 12),
-
-                      //Order delivered
-                      Row(
+                      // Status Row
+                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Icon(
-                            Icons.gpp_good_outlined,
-                           
+                            Icons.cancel_outlined,
+                           size: 17,
                             color: kPrimaryColor,
                           ),
-                          Text("Order delivered",style: TextStyle(
+                          Text(" Order cancelled",style: TextStyle(
                             color: kPrimaryColor
                           ),)
                         ],
                       ),
-                      SizedBox(height: 12,),
 
-                      // 3. BUTTONS SECTION
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        // justifyContent: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          // CANCEL BUTTON (Text-only appearance)
-                          ElevatedButton(
-                            onPressed: () {
-                              // Add cancel action
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=> const Review()));
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: kPrimaryColor,
-                              foregroundColor: Colors.white, // Text color
-                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-                              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                            ),
-                            child: const Text(
-                              "Leave a review",
-                              style: TextStyle(
-                                // decoration: TextDecoration.underline,
-                                fontSize: 14,
-                              ),
-                            ),
-                          ),
-                  
-                          const SizedBox(width: 8),
-                  
-                          // TRACK DRIVER BUTTON (Primary Color appearance)
-                          ElevatedButton( // Used ElevatedButton for better contrast
-                            onPressed: () {
-                              // Add track driver action
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: btn, // Button background color
-                              foregroundColor: kPrimaryColor,  // Text color
-                              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              elevation: 0,
-                            ),
-                            child: const Text(
-                              "Order Again",
-                              style: TextStyle(
-                                fontSize: 14,
-                                // fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                      
+                 
                     ],
                   ),
                 ),
