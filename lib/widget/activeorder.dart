@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yumquick/widget/cancelorder.dart';
 import 'package:yumquick/widget/emptyorder.dart';
 
 // --- CONSTANTS ---
@@ -115,6 +116,7 @@ class Activeorder extends StatelessWidget {
                           ElevatedButton(
                             onPressed: () {
                               // Add cancel action
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=> const Cancelorder()));
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: kPrimaryColor,
