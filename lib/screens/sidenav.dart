@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:yumquick/screens/delivery_address.dart';
 import 'package:yumquick/screens/myorders.dart';
+import 'package:yumquick/widget/profile.dart';
 
 const Color kPrimaryColor = Color(0xFFE95422);
-class Profile extends StatelessWidget {
-  const Profile({super.key});
+class Sidenav extends StatelessWidget {
+  const Sidenav({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +109,7 @@ class Profile extends StatelessWidget {
                       title: const Text('My Profile', style: TextStyle(color: Colors.white, fontSize: 16)),
                       onTap: () {
                         // Navigate to My Profile screen
-                        Navigator.pop(context);
+                         Navigator.push(context, MaterialPageRoute(builder: (context)=> Profile()));
                       },
                     ),
                   ),
@@ -122,7 +124,7 @@ class Profile extends StatelessWidget {
                       title: const Text('Delivery Address', style: TextStyle(color: Colors.white, fontSize: 16)),
                       onTap: () {
                         // Navigate to settings screen
-                        Navigator.pop(context);
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>DeliveryAddress()));
                       },
                     ),
                   ),

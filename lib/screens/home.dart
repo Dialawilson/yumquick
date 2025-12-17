@@ -107,7 +107,7 @@ class Home extends StatelessWidget{
                           barrierLabel: "RightDrawer",
                           transitionDuration: Duration(milliseconds: 300),
                           pageBuilder: (_,__,___){
-                            return const Profile();
+                            return const Sidenav();
                           },
                           transitionBuilder: (_, anim, __, child){
                             final offsetAnimation = Tween<Offset>(begin: const Offset(1,0),
