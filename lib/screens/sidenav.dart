@@ -124,7 +124,7 @@ class Sidenav extends StatelessWidget {
                       title: const Text('Delivery Address', style: TextStyle(color: Colors.white, fontSize: 16)),
                       onTap: () {
                         // Navigate to settings screen
-                        Navigator.push(context,MaterialPageRoute(builder: (context)=>DeliveryAddress()));
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>AddressSelection()));
                       },
                     ),
                   ),
