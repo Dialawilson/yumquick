@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yumquick/screens/delivery_address.dart';
 import 'package:yumquick/screens/myorders.dart';
+import 'package:yumquick/screens/pay_methods.dart';
 import 'package:yumquick/widget/profile.dart';
 
 const Color kPrimaryColor = Color(0xFFE95422);
@@ -139,7 +140,7 @@ class Sidenav extends StatelessWidget {
                     title: const Text('Payment Methods', style: TextStyle(color: Colors.white),),
                      onTap: () {
                         // Navigate to settings screen
-                        Navigator.pop(context);
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>const PayMethods()));
                       },
                   ),
                   ),

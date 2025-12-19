@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:yumquick/widget/add_deliveryaddress.dart';
+import 'package:yumquick/widget/bottomNav.dart';
 
 const Color kBackgroundColor = Color(0xFFF5CB58);
 const Color kPrimaryColor = Color(0xFFE95422);
@@ -40,7 +41,7 @@ class _AddressSelectionState extends State<AddressSelection> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: kBackgroundColor,
+      // backgroundColor: kBackgroundColor,
       appBar: AppBar(
         backgroundColor: kBackgroundColor,
         toolbarHeight: 100,
@@ -157,6 +158,7 @@ class _AddressSelectionState extends State<AddressSelection> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNav(),
     );
   }
 }
