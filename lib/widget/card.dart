@@ -19,6 +19,7 @@ class CardPay extends StatelessWidget{
         title: const Text(
           "Add Card",
           style: TextStyle(
+            color: Colors.white,
             fontWeight: FontWeight.w700,
 
           ),
@@ -26,12 +27,73 @@ class CardPay extends StatelessWidget{
         ),
         leading: IconButton(onPressed: ()
         => Navigator.pop(context),
-         icon: SvgPicture.asset("assets/svg/BackIcon", height: 24,),
+         icon: SvgPicture.asset("assets/svg/BackIcon.svg", height: 24,),
          ),
       ),
+
       body: Container(
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(30))
+        ),
         // === WORKING ON THE CARD SECTION ====
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+          child: SingleChildScrollView(
+            child: Column(
+            
+              children: [
+                SvgPicture.asset("assets/svg/card.svg"),
+                SizedBox(height: 20,),
+
+                Wrap(
+                  crossAxisAlignment: WrapCrossAlignment.start,
+                  children: [
+
+                  Text(
+                    "Card holder Name",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700
+                    ),
+                  ),
+                  SizedBox(height: 20,),
+                  TextFormField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      hintText: "john smith",
+                      fillColor: kBackgroundColor,
+                      filled: true,
+                    ),
+                  ),
+                  SizedBox(height: 20,),
+                  Text(
+                    "Card Number",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+
+                    ),
+                  ),
+                     TextFormField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      hintText: "000 000 000 00",
+                      fillColor: kBackgroundColor,
+                      filled: true,
+                    ),
+                  ),
+                  SizedBox(height: 20,),
+                  ],
+                )
+              ],
+            ),
+          ),
+        ),
       ),
-    )
+    );
   }
 }
